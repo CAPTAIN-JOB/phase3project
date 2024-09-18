@@ -24,7 +24,11 @@ const Login = () => {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
 			<h2 className="text-2xl font-bold mb-6">Log In</h2>
-			<form action="" className=" flex flex-col">
+			<form
+				action=""
+				className=" flex flex-col"
+				onSubmit={(e) => e.preventDefault()}
+			>
 				<input
 					type="email"
 					placeholder="Email"

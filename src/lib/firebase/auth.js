@@ -50,3 +50,12 @@ export const loginUser = async (email, password) => {
 		throw error;
 	}
 };
+
+export const logoutUser = async () => {
+	try {
+		await auth.signOut();
+		console.log("User logged out successfully");
+	} catch (error) {
+		console.error("Error logging out:", error);
+	}
+};

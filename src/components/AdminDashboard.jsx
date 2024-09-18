@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { firestore } from "../lib/firebase/firebase"; // Correct path
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore"; // Use 'firebase/firestore' instead of local file
+import { Link } from "react-router-dom";
 
 const AdminDashboard = () => {
 	const [users, setUsers] = useState([]);
@@ -34,7 +35,16 @@ const AdminDashboard = () => {
 
 	return (
 		<div className="p-4">
-			<h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
+			<div className=" flex justify-around">
+				<div>
+					<h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
+				</div>
+				<div>
+					<Link to="/user-dashboard">
+						<button className=" text-white ">Users dashboard</button>
+					</Link>
+				</div>
+			</div>
 			<ul>
 				{users.map((user) => (
 					<li
